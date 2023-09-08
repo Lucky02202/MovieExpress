@@ -1,8 +1,12 @@
+import Navbar from "./components/Navbar"
+
 const App = () => {
   return (
-    <h1 className="text-3xl text-black font-semibold border-2 border-secondary px-4 py-3 bg-cta rounded-full w-fit m-4">
-      Hello world!
-    </h1>
+    <section className="">
+      <section className="w-full sm:w-[80%] lg:w-4/5 xl:w-3/5 m-auto h-screen p-4 bg-secondary gradient-bg">
+        <Navbar />
+      </section>
+    </section>
   )
 }
 
