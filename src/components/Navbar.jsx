@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import img from '../assets/logo.svg'
 import { RiMenu3Line, RiCloseFill } from 'react-icons/ri'
 
@@ -33,16 +33,6 @@ const Options = () => {
 }
 
 const Navbar = () => {
-
-  // useEffect(() => {
-  //   let menu = document.getElementById('menu')
-  //   menu.addEventListener("click", (e) => {
-  //     e.stopPropagation()
-  //   })
-  //   document.body.addEventListener("click", () => {
-  //     menu.style.display = "hidden"
-  //   })
-  // }, [])
   const [toggleMenu, setToggleMenu] = useState(false)
   return (
     <nav className="w-full box-border flex sm:flex-col justify-evenly items-center">
@@ -60,8 +50,8 @@ const Navbar = () => {
         }
         {
           toggleMenu &&
-          <div className='absolute top-0 right-0 animate-fade-left animate-once bg-slate-500 p-4 rounded-bl-xl h-screen' id='menu'>
-            <RiCloseFill size={20} className='absolute right-2 top-2' onClick={() => { setToggleMenu(!toggleMenu) }} />
+          <div className='fixed top-0 right-0 animate-fade-left animate-once bg-slate-500 p-4 h-screen' id='menu'>
+            <RiCloseFill size={20} className='absolute z-30 right-2 top-2' onClick={() => { setToggleMenu(!toggleMenu) }} />
             <Options />
           </div>
         }
